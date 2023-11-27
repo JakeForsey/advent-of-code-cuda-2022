@@ -11,16 +11,16 @@ My attempt at Advent of Code 2023 using CUDA
 
 ### CUDA
 ```bash
-runcu.sh day01
+./runcu.sh day01
 ```
 
 ### Python
 ```bash
-runpy.sh day01
+./runpy.sh day01
 ```
 
 ## Test Python matches CUDA
 
 ```bash
-compare.sh day01
+./compare.sh
 ```
