@@ -11,4 +11,6 @@ int *sort(int *d_input, int n);
 
 int *top_3(int *d_input, int n);
 
+int *add(int *d_input, int n, int other);
+
 #endif

@@ -20,6 +20,14 @@ int *from_device(int *d_input, int n) {
     return input;
 }
 
+int threads(int n) {
+    return 512 > n ? n + 1 : 512;
+}
+
+int blocks(int n) {
+    return ceil((double) (n + 1) / (double) threads(n));
+}
+
 void print_darray(int *d_input, int n) {
     int *input = from_device(d_input, n);
     printf("[");

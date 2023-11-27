@@ -9,4 +9,8 @@ int *from_device(int *d_input, int n);
 
 void print_darray(int *d_input, int n);
 
+int threads(int n);
+
+int blocks(int n);
+
 #endif

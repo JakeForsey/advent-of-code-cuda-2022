@@ -119,3 +119,16 @@ int *top_3(int *d_input, int n) {
     top_3<<<1, 1>>>(d_input, n, d_out);
     return d_out;
 }
+
+__global__ void add(int *d_input, int n, int other, int *d_out) {
+    int i = blockIdx.x * blockDim.x + threadIdx.x;
+    if (i < n) {
+        d_out[i] = d_input[i] + other;
+    }
+}
+
+int *add(int *d_input, int n, int other) {
+    int *d_out = empty(n);
+    add<<<threads(n), blocks(n)>>>(d_input, n, other, d_out);
+    return d_out;
+}
