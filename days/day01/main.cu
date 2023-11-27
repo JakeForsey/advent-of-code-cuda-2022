@@ -27,7 +27,6 @@ int main() {
     }
     int n_groups = group;
     int n_rows = row_idx;
-
     int *d_counts = to_device(counts, n_rows);
     int *d_groups = to_device(groups, n_rows);
 
@@ -41,9 +40,7 @@ int main() {
     // Part 2:
     int *d_sorted = sort(d_group_totals, n_groups);
     int *d_top = top_3(d_sorted, n_groups);
-    print_darray(d_top, 3);
     int *d_sum = sum(d_top, 3);
-    print_darray(d_sum, 1);
     printf("part 2: %i\n", from_device(d_sum, 1)[0]);
 
     return 0;
